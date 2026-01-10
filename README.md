@@ -1,32 +1,62 @@
-# MCGGTools - Magic Chess GoGo Battle Tracker
+# Magic Chess Go Go Enemy Predictor
 
-**MCGGTools** adalah alat bantu untuk melacak lawan-lawanmu dalam permainan *Magic Chess GoGo*. Kamu bisa mengisi lawan-lawan untuk ronde 1 hingga 7, lalu menandai lawan yang kalah atau menyerah (suren), dan sistem akan secara otomatis menggeser lawan berikutnya naik ke posisi yang lebih tinggi.
+Sebuah alat prediksi musuh otomatis untuk game strategi turn-based seperti Auto Chess. Alat ini membantu pemain memprediksi lawan yang akan dihadapi di ronde-ronde berikutnya berdasarkan sistem eliminasi.
 
-## Fitur
+## Fitur Utama
 
-- Input nama lawan untuk ronde 1–7.
-- Tombol "Kalah" untuk menghapus lawan dan menggeser lawan di bawahnya.
-- Tombol "Suren" yang memberi peringatan bahwa permainan kembali ke ronde 1.
-- Tampilan modern dengan mode gelap dan terang.
-- Responsif dan mudah digunakan di HP maupun PC.
-
-## Cara Menggunakan
-
-1. Buka file `index.html` di browser kamu.
-2. Isi nama lawan-lawanmu di bagian input.
-3. Klik "Simpan Semua Lawan".
-4. Gunakan tombol "Kalah" atau "Suren" saat pertandingan berlangsung.
+- ✅ Input daftar musuh ronde 1-7 (dapat menggunakan nama bebas atau default Player 1-8)
+- ✅ Sistem prediksi otomatis untuk ronde 8+
+- ✅ Penandaan pemain yang kalah/eliminasi
+- ✅ Tabel interaktif untuk melacak status musuh
+- ✅ Penyimpanan data lokal (localStorage) - tetap tersimpan setelah refresh
+- ✅ Responsif dan ramah mobile
+- ✅ Tanpa framework - hanya HTML, CSS, JavaScript murni
 
 ## Teknologi yang Digunakan
 
-- HTML
-- CSS
-- JavaScript (Tanpa framework)
+- HTML5
+- CSS3 (Flexbox/Grid)
+- Vanilla JavaScript
+- localStorage API
+
+## Cara Pemakaian
+
+### 1. Pengaturan Awal
+- Masukkan nama musuh untuk ronde 1-7 di kolom input
+- Klik tombol **"Simpan Musuh"** untuk menyimpan daftar awal
+
+### 2. Prediksi Ronde Berikutnya
+- Klik tombol **"Prediksi Ronde Berikutnya"** untuk menampilkan musuh ronde 8+
+- Sistem akan otomatis memilih musuh berdasarkan daftar aktif yang tersisa
+
+### 3. Menandai Pemain yang Kalah
+- Klik tombol **"Kalah"** di sebelah musuh yang telah dikalahkan
+- Pemain tersebut akan dieliminasi dari rotasi prediksi selanjutnya
+
+### 4. Reset Data
+- Gunakan tombol **"Reset"** untuk membersihkan semua data dan memulai ulang
+
+## Logika Prediksi
+
+- Ronde 1-7 diisi manual oleh pengguna
+- Ronde 8+ menggunakan sistem rotasi berdasarkan daftar musuh aktif
+- Jika ada pemain yang kalah, sistem akan melewati mereka dan melanjutkan ke pemain berikutnya
+- Rotasi berjalan secara siklus (loop) antar pemain aktif
+
+## Instalasi Lokal
+
+1. Clone atau download repository ini
+2. Buka file `index.html` di browser
+3. Aplikasi siap digunakan tanpa perlu server
+
+## Kontribusi
+
+Kontribusi sangat diterima! Silakan buat pull request untuk:
+- Bug fixes
+- Penambahan fitur
+- Peningkatan UI/UX
+- Optimasi performa
 
 ## Lisensi
 
-Proyek ini bersifat open-source dan bebas digunakan.
-
----
-
-Dibuat oleh **LIONBEPTHD**.
+Proyek ini bersifat open-source dan bebas digunakan untuk keperluan pribadi maupun komersial.
